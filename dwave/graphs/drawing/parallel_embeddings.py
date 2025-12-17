@@ -11,15 +11,16 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
+
 from typing import Optional
 import math
 
 import networkx as nx
 import numpy
 
-from dwave_networkx.drawing.chimera_layout import draw_chimera, chimera_layout
-from dwave_networkx.drawing.pegasus_layout import draw_pegasus, pegasus_layout
-from dwave_networkx.drawing.zephyr_layout import draw_zephyr, zephyr_layout
+from dwave.graphs.drawing.chimera_layout import draw_chimera, chimera_layout
+from dwave.graphs.drawing.pegasus_layout import draw_pegasus, pegasus_layout
+from dwave.graphs.drawing.zephyr_layout import draw_zephyr, zephyr_layout
 
 __all__ = ["draw_parallel_embeddings"]
 
@@ -155,7 +156,7 @@ def draw_parallel_embeddings(
     use_plt: bool = True,
     **kwargs,
 ):
-    """Visualizes the embeddings using dwave_networkx's layout functions.
+    """Visualizes the embeddings using dwave-graphs layout functions.
 
     Args:
         G: The target graph to be visualized.
@@ -178,13 +179,13 @@ def draw_parallel_embeddings(
     no embedding in the bottom right.
 
     >>> import networkx as nx
-    >>> import dwave_networkx as dnx
+    >>> import dwave.graphs
     >>> import matplotlib.pyplot as plt   # doctest: +SKIP
-    >>> G = dnx.chimera_graph(2)
+    >>> G = dwave.graphs.chimera_graph(2)
     >>> S = nx.from_edgelist({(i,i+1) for i in range(7)})
     >>> emb = {i: (i // 2) + 4*(i % 2) for i in range(8)} # Top-left embedding
     >>> embs = [{k: (v+8*offset,) for k,v in emb.items()} for offset in range(3)]
-    >>> dnx.draw_parallel_embeddings(G, embs)    # doctest: +SKIP
+    >>> dwave.graphs.draw_parallel_embeddings(G, embs)    # doctest: +SKIP
     >>> plt.show()    # doctest: +SKIP
     """
     try:

@@ -15,8 +15,6 @@
 import itertools
 import collections.abc as abc
 
-from collections import namedtuple
-
 import networkx as nx
 
 
@@ -79,7 +77,7 @@ def markov_network(potentials):
     ...                            (0, 1): .5,
     ...                            (1, 0): .5,
     ...                            (1, 1): 2}}
-    >>> MN = dnx.markov_network(potentials)
+    >>> MN = dwave.graphs.markov_network(potentials)
     >>> MN['a']['b']['potential'][(0, 0)]
     -1
 

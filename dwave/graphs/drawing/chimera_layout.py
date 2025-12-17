@@ -11,17 +11,15 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
-#
-# ================================================================================================
+
 """
 Tools to visualize :term:`Chimera` lattices and weighted :term:`graph` problems on them.
 """
 
 import networkx as nx
-from networkx import draw
 
-from dwave_networkx.drawing.qubit_layout import draw_qubit_graph, draw_embedding, draw_yield
-from dwave_networkx.generators.chimera import chimera_graph, find_chimera_indices, chimera_coordinates
+from dwave.graphs.drawing.qubit_layout import draw_qubit_graph, draw_embedding, draw_yield
+from dwave.graphs.generators.chimera import chimera_graph, find_chimera_indices, chimera_coordinates
 
 
 __all__ = ['chimera_layout', 'draw_chimera', 'draw_chimera_embedding', 'draw_chimera_yield']
@@ -59,8 +57,8 @@ def chimera_layout(G, scale=1., center=None, dim=2):
 
     Examples
     --------
-    >>> G = dnx.chimera_graph(1)
-    >>> pos = dnx.chimera_layout(G)
+    >>> G = dwave.graphs.chimera_graph(1)
+    >>> pos = dwave.graphs.chimera_layout(G)
 
     """
 
@@ -220,10 +218,10 @@ def draw_chimera(G, **kwargs):
     --------
     >>> # Plot 2x2 Chimera unit cells
     >>> import networkx as nx
-    >>> import dwave_networkx as dnx
+    >>> import dwave.graphs
     >>> import matplotlib.pyplot as plt  # doctest: +SKIP
-    >>> G = dnx.chimera_graph(2, 2, 4)
-    >>> dnx.draw_chimera(G)  # doctest: +SKIP
+    >>> G = dwave.graphs.chimera_graph(2, 2, 4)
+    >>> dwave.graphs.draw_chimera(G)  # doctest: +SKIP
     >>> plt.show()  # doctest: +SKIP
 
     """

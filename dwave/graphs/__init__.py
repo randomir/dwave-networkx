@@ -12,20 +12,20 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-import dwave_networkx.generators
-from dwave_networkx.generators import *
+import dwave.graphs.generators
+from dwave.graphs.generators import *
 
-import dwave_networkx.algorithms
-from dwave_networkx.algorithms import *
+import dwave.graphs.algorithms
+from dwave.graphs.algorithms import *
 
-import dwave_networkx.utils
-from dwave_networkx.exceptions import *
+import dwave.graphs.utils
+from dwave.graphs.exceptions import *
 
-import dwave_networkx.default_sampler
-from dwave_networkx.default_sampler import *
+import dwave.graphs.default_sampler
+from dwave.graphs.default_sampler import *
 
-import dwave_networkx.drawing
-from dwave_networkx.drawing import *
+import dwave.graphs.drawing
+from dwave.graphs.drawing import *
 
-from dwave_networkx.package_info import __version__, __author__, \
+from dwave.graphs.package_info import __version__, __author__, \
     __authoremail__, __description__

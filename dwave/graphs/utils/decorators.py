@@ -20,7 +20,7 @@ algorithms.
 import functools
 import inspect
 
-import dwave_networkx as dnx
+import dwave.graphs
 
 __all__ = ['binary_quadratic_model_sampler']
 
@@ -59,9 +59,9 @@ def binary_quadratic_model_sampler(which_args):
                 # been set
                 if sampler is None:
                     # this sampler has already been vetted
-                    default_sampler = dnx.get_default_sampler()
+                    default_sampler = dwave.graphs.get_default_sampler()
                     if default_sampler is None:
-                        raise dnx.DWaveNetworkXMissingSampler('no default sampler set')
+                        raise dwave.graphs.DWaveNetworkXMissingSampler('no default sampler set')
                     new_args[idx] = default_sampler
                     continue
 

@@ -12,7 +12,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-import dwave_networkx as dnx
+import dwave.graphs
 import networkx as nx
 import dimod
 
@@ -29,8 +29,8 @@ G.add_edges_from([(0, 1), (0, 2), (1, 3), (2, 3), (3, 5), (4, 5), (3, 6), (4, 7)
 
 # Get the minimum vertex cover, which is known in this case to be of
 # length 5
-candidate = dnx.min_vertex_cover(G, sampler)
-if dnx.is_vertex_cover(G, candidate) and len(candidate) == 5:
+candidate = dwave.graphs.min_vertex_cover(G, sampler)
+if dwave.graphs.is_vertex_cover(G, candidate) and len(candidate) == 5:
     print (candidate, " is a minimum vertex cover")
 else:
     print (candidate, " is not a minimum vertex cover")

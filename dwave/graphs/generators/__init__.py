@@ -12,7 +12,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-from dwave_networkx.generators.chimera import *
-from dwave_networkx.generators.markov import markov_network
-from dwave_networkx.generators.pegasus import *
-from dwave_networkx.generators.zephyr import *
+from dwave.graphs.generators.chimera import *
+from dwave.graphs.generators.markov import markov_network
+from dwave.graphs.generators.pegasus import *
+from dwave.graphs.generators.zephyr import *

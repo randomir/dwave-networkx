@@ -12,7 +12,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-import dwave_networkx as dnx
+import dwave.graphs
 import networkx as nx
 import dimod
 
@@ -25,8 +25,8 @@ G.add_edges_from([(0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (1, 4), (2, 4), (3, 4)
 
 # Get the minimum vertex coloring, which is known in this case to be of
 # length 6
-candidate = dnx.min_vertex_coloring(G, sampler)
-if dnx.is_vertex_coloring(G, candidate) and len(candidate) == 6:
+candidate = dwave.graphs.min_vertex_coloring(G, sampler)
+if dwave.graphs.is_vertex_coloring(G, candidate) and len(candidate) == 6:
     print(candidate, " is a minimum vertex coloring")
 else:
     print(candidate, " is not a minimum vertex coloring")

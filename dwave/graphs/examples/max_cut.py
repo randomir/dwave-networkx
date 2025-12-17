@@ -12,7 +12,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-import dwave_networkx as dnx
+import dwave.graphs
 import networkx as nx
 import dimod
 
@@ -24,7 +24,7 @@ G = nx.Graph()
 G.add_edges_from([(0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (1, 4), (2, 4), (3, 4), (3, 5), (4, 5), (5, 2)])
 
 # Get the max cut
-candidate = dnx.maximum_cut(G, sampler)
+candidate = dwave.graphs.maximum_cut(G, sampler)
 if len(candidate) == 3:
     print (candidate, " is the right length")
 else:

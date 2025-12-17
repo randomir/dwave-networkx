@@ -14,9 +14,8 @@
 #
 
 import matplotlib.pyplot as plt
-import dwave_networkx as dnx
-import networkx as nx
+import dwave.graphs
 
-G = dnx.chimera_graph(2, 2, 4)
-dnx.draw_chimera(G)
+G = dwave.graphs.chimera_graph(2, 2, 4)
+dwave.graphs.draw_chimera(G)
 plt.show()

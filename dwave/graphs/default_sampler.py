@@ -54,15 +54,15 @@ examples of the functions for configuring a default sampler.
 ...
 >>> # Identify the new sampler as the default sampler
 >>> sampler0 = ExampleSampler('sampler0')
->>> dnx.set_default_sampler(sampler0)
+>>> dwave.graphs.set_default_sampler(sampler0)
 >>> # Find an independent set using the default sampler
 >>> G = nx.complete_graph(5)
->>> dnx.maximum_independent_set(G)
+>>> dwave.graphs.maximum_independent_set(G)
 [0]
 
 """
 
-from dwave_networkx.utils.decorators import binary_quadratic_model_sampler
+from dwave.graphs.utils.decorators import binary_quadratic_model_sampler
 
 __all__ = ['set_default_sampler', 'get_default_sampler', 'unset_default_sampler']
 
@@ -90,9 +90,9 @@ def set_default_sampler(sampler):
     set for graph G, first using the default sampler and then overriding it by
     specifying a different sampler.
 
-    >>> dnx.set_default_sampler(sampler0)  # doctest: +SKIP
-    >>> indep_set = dnx.maximum_independent_set_dm(G)  # doctest: +SKIP
-    >>> indep_set = dnx.maximum_independent_set_dm(G, sampler1)  # doctest: +SKIP
+    >>> dwave.graphs.set_default_sampler(sampler0)  # doctest: +SKIP
+    >>> indep_set = dwave.graphs.maximum_independent_set_dm(G)  # doctest: +SKIP
+    >>> indep_set = dwave.graphs.maximum_independent_set_dm(G, sampler1)  # doctest: +SKIP
 
     """
     global _SAMPLER
@@ -107,11 +107,11 @@ def unset_default_sampler():
     This example sets sampler0 as the default sampler, verifies the setting,
     then resets the default, and verifies the resetting.
 
-    >>> dnx.set_default_sampler(sampler0)  # doctest: +SKIP
-    >>> print(dnx.get_default_sampler())  # doctest: +SKIP
+    >>> dwave.graphs.set_default_sampler(sampler0)  # doctest: +SKIP
+    >>> print(dwave.graphs.get_default_sampler())  # doctest: +SKIP
     'sampler0'
-    >>> dnx.unset_default_sampler()  # doctest: +SKIP
-    >>> print(dnx.get_default_sampler())  # doctest: +SKIP
+    >>> dwave.graphs.unset_default_sampler()  # doctest: +SKIP
+    >>> print(dwave.graphs.get_default_sampler())  # doctest: +SKIP
     None
     """
     global _SAMPLER
@@ -126,10 +126,10 @@ def get_default_sampler():
     This example queries the default sampler before and after specifying
     a default sampler.
 
-    >>> print(dnx.get_default_sampler())  # doctest: +SKIP
+    >>> print(dwave.graphs.get_default_sampler())  # doctest: +SKIP
     None
-    >>> dnx.set_default_sampler(sampler)  # doctest: +SKIP
-    >>> print(dnx.get_default_sampler())  # doctest: +SKIP
+    >>> dwave.graphs.set_default_sampler(sampler)  # doctest: +SKIP
+    >>> print(dwave.graphs.get_default_sampler())  # doctest: +SKIP
     'sampler'
 
     """

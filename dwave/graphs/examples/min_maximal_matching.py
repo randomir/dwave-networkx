@@ -12,18 +12,18 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-import dwave_networkx as dnx
+import dwave.graphs
 import dimod
 
 # Use basic simulated annealer
 sampler = dimod.SimulatedAnnealingSampler()
 
-G = dnx.chimera_graph(1, 1, 4)
+G = dwave.graphs.chimera_graph(1, 1, 4)
 # Get the minimum maximal matching, which is known in this case to be of
 # length 4
-candidate = dnx.min_maximal_matching(G, sampler)
+candidate = dwave.graphs.min_maximal_matching(G, sampler)
 
-if dnx.is_maximal_matching(G, candidate) and len(candidate) == 4:
+if dwave.graphs.is_maximal_matching(G, candidate) and len(candidate) == 4:
     print (candidate, " is a minimum maximal matching")
 else:
     print (candidate, " is not a minimum maximal matching")

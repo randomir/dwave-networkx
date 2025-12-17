@@ -22,7 +22,7 @@ import networkx as nx
 
 from networkx import draw
 
-from dwave_networkx.drawing.distinguishable_colors import distinguishable_color_map
+from dwave.graphs.drawing.distinguishable_colors import distinguishable_color_map
 
 __all__ = ['draw_qubit_graph']
 

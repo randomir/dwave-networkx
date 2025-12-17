@@ -12,7 +12,7 @@
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
 
-from dwave_networkx.drawing.chimera_layout import *
-from dwave_networkx.drawing.pegasus_layout import *
-from dwave_networkx.drawing.zephyr_layout import *
-from dwave_networkx.drawing.parallel_embeddings import *
+from dwave.graphs.drawing.chimera_layout import *
+from dwave.graphs.drawing.pegasus_layout import *
+from dwave.graphs.drawing.zephyr_layout import *
+from dwave.graphs.drawing.parallel_embeddings import *
