@@ -4,14 +4,14 @@
 .. image:: https://codecov.io/gh/dwavesystems/dwave-graphs/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/dwavesystems/dwave-graphs
 
-.. image:: https://circleci.com/gh/dwavesystems/dwave-graphs.svg?style=svg
+.. image:: https://circleci.com/gh/dwavesystems/dwave-networkx.svg?style=svg
     :target: https://circleci.com/gh/dwavesystems/dwave-graphs
 
 ============
 dwave-graphs
 ============
 
-.. start_dnx_about
+.. start_graphs_about
 
 dwave-graphs provides tools for
 working with quantum processing unit (QPU) topology graphs, such as the Pegasus
@@ -24,7 +24,7 @@ This example generates a Pegasus graph of the size used by Advantage QPUs.
 >>> import dwave.graphs
 >>> graph = dwave.graphs.pegasus_graph(16)
 
-.. end_dnx_about
+.. end_graphs_about
 
 Installation
 ============

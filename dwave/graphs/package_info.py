@@ -13,6 +13,6 @@
 #    limitations under the License.
 
 __version__ = '1.0.0.dev'
-__author__ = 'D-Wave Systems Inc.'
+__author__ = 'D-Wave Inc.'
 __authoremail__ = 'tools@dwavesys.com'
 __description__ = 'A package providing graphs and algorithms relevant to working with the D-Wave System'
